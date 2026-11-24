@@ -33,7 +33,9 @@ void main() {
   print(nicknameLength('Mint')); // ควรได้ 4
 
   print('--- ข้อ 5 (Stretch) ---');
-  print(topThreeExpensive(products)); // ควรได้ [แล็ปท็อป, จอมอนิเตอร์, คีย์บอร์ด]
+  print(
+    topThreeExpensive(products),
+  ); // ควรได้ [แล็ปท็อป, จอมอนิเตอร์, คีย์บอร์ด]
 }
 
 // ------------------------------------------------------------
@@ -45,7 +47,8 @@ void main() {
 // ------------------------------------------------------------
 String bmi(double weight, double height) {
   // TODO: เขียนโค้ดตรงนี้
-  return '';
+  double BMI = weight / (height * height);
+  return BMI.toStringAsFixed(2);
 }
 
 // ------------------------------------------------------------
@@ -60,17 +63,17 @@ String bmi(double weight, double height) {
 // ------------------------------------------------------------
 String average(List<int> numbers) {
   // TODO
-  return '';
+  double avg = numbers.reduce((a, b) => a + b) / numbers.length;
+  return avg.toStringAsFixed(2);
 }
 
 int highest(List<int> numbers) {
-  // TODO
-  return 0;
+  return numbers.reduce((a, b) => a > b ? a : b);
 }
 
 int lowest(List<int> numbers) {
   // TODO
-  return 0;
+  return numbers.reduce((a, b) => a < b ? a : b);
 }
 
 // ------------------------------------------------------------
@@ -92,7 +95,9 @@ const List<Map<String, dynamic>> students = [
 
 List<String> topStudentNames(List<Map<String, dynamic>> list) {
   // TODO
-  return [];
+  List<String> topStudentNames(List<Map<String, dynamic>> list) {
+  return list
+      .where((s) => s['score'] as int 
 }
 
 // ------------------------------------------------------------
